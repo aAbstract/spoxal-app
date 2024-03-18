@@ -1,10 +1,19 @@
+import { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { Text, View } from '@/components/common/Themed';
+import { View } from 'react-native';
+import { Button } from 'react-native-paper';
+import { TextInput } from 'react-native-paper';
 
 export default function ModalScreen() {
+    const [text, setText] = useState('');
+
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Login Page</Text>
+            <TextInput label="Email" value={text} onChangeText={text => setText(text)} />
+            <Button icon="camera" mode="elevated" onPress={() => console.log('Pressed')}>
+                Press me
+            </Button>
+            {/* <Text style={styles.title}>Login Page</Text> */}
         </View>
     );
 }
