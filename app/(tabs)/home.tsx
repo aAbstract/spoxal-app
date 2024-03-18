@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
 import { Text, View } from 'react-native';
 
-export default function TabTwoScreen() {
+export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
+      <Text style={styles.title}>Home Page</Text>
       <View style={styles.separator} />
     </View>
   );

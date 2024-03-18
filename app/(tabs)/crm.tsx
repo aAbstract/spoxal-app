@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
 import { Text, View } from 'react-native';
 
-export default function TabOneScreen() {
+export default function CRMScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>CRM Page</Text>
       <View style={styles.separator} />
     </View>
   );

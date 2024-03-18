@@ -1,31 +1,42 @@
 import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
+import { useTheme } from 'react-native-paper';
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
+const botIconsProps = { size: 24 };
 
 export default function TabLayout() {
+  const theme = useTheme();
+  const { primary } = theme.colors;
 
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs screenOptions={{ headerShown: false, tabBarActiveTintColor: primary }}>
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Home',
+          tabBarIcon: ({ color }) => <Feather name="home" color={color} {...botIconsProps} />,
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="spoxals"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Spoxals',
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="robot-outline" color={color} {...botIconsProps} />,
+        }}
+      />
+      <Tabs.Screen
+        name="crm"
+        options={{
+          title: 'Contacts',
+          tabBarIcon: ({ color }) => <Feather name="phone-call" color={color} {...botIconsProps} />,
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ color }) => <Feather name="settings" color={color} {...botIconsProps} />,
         }}
       />
     </Tabs>
