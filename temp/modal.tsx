@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet } from 'react-native';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import EditScreenInfo from '@/components/common/EditScreenInfo';
+import { Text, View } from '@/components/common/Themed';
 
 export default function ModalScreen() {
   return (
@@ -33,3 +33,28 @@ const styles = StyleSheet.create({
     width: '80%',
   },
 });
+
+
+{/* <Tabs.Screen
+name="index"
+options={{
+  title: 'Tab One',
+  tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+  headerRight: () => (
+    <Link href="/modal" asChild>
+      <Pressable>
+        {({ pressed }) => (
+          <FontAwesome
+            name="info-circle"
+            size={25}
+            color={Colors[colorScheme ?? 'light'].text}
+            style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+          />
+        )}
+      </Pressable>
+    </Link>
+  ),
+}}
+/> */}
+
+{/* <Stack.Screen name="modal" options={{ presentation: 'modal' }} /> */}
